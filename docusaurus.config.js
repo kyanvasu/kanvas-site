@@ -1,24 +1,23 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'My Site',
+  title: 'Kanvas | Open Source Smart Code Solution',
   tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://kanvas.dev/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-  plugins: ['docusaurus-plugin-sass'],
+  organizationName: 'kyanvasu',
+  projectName: 'kanvas-documentation',
+	plugins: ['docusaurus-plugin-sass'],
   themeConfig: {
     colorMode: {
-      disableSwitch: true,
+      disableSwitch: true
     },
     navbar: {
-      title: '',	
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/kanvas-logo.png',
+        alt: 'Kanvas',
+        src: 'img/logo.png',
       },
       items: [
         {
@@ -28,10 +27,9 @@ module.exports = {
           label: 'Documentation',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
-          position: 'right',
-        },
+          position: 'right'
+        }
       ],
     },
     footer: {
@@ -47,12 +45,6 @@ module.exports = {
           // Please change this to your repo.
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
           customCss: [require.resolve('./src/css/custom.scss')],

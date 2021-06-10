@@ -109,4 +109,8 @@ hr {
 
 .container {
   max-width: 1585px;
+
+  @media screen and (min-width: 767px) {
+    max-width: 580px;
+  }
 }
