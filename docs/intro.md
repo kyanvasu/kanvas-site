@@ -2,34 +2,33 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Kanvas is the name we’re giving to more robust packages and components that offer solutions to specific needs. In essence, it is a collection of interconnected **Baka** packages and components that fulfill a specific role.
 
-## Getting Started
+In simpler terms: a **Kanvas** package or component is built by layering multiple **Baka** packages or components together to create a more complex and robust solution catered to a larger challenge.
 
-Get started by **creating a new site**.
+Here are some examples:
 
-Or **try Docusaurus immediately** with **[new.docusaurus.io](https://new.docusaurus.io)**.
+*   [vue-upload-component](https://github.com/lian-yue/vue-upload-component)
+*   [Vue-form-json](https://github.com/14nrv/vue-form-json)
+*   [Kanvas Core](https://github.com/bakaphp/canvas-core)
 
-## Generate a new site
+**Baka** has long been the name we’ve been using to denote packages created to address a solution. For some time this has only been done for backend challenges and we now want to extend them to solve frontend challenges.
 
-Generate a new Docusaurus site using the **classic template**:
+With **Kanvas** we want to go beyond and above being just another boilerplate. We aim to offer solutions to common (and sometimes uncommon) needs developers have. We want to help developers quickly deploy apps by writing as little code as possible, while still keeping a high degree of customization and adaptability.
 
-```shell
-npx @docusaurus/init@latest init my-website classic
-```
+The aim of this layer is to address compact and agnostic solutions to specific challenges that we find in our everyday coding. By writing agnostic packages and components we can assure a large degree of portability and compatibility throughout many different systems that utilize them.
 
-## Start your site
+Here are some brief reasons as to why this way of thinking and implementation are important:
 
-Run the development server:
+*   **Save energy.** By allowing the developer to focus on developing the actual app.
+*   **Reusable code.** Spending less time having to re-code the same things repeatedly.
+*   **Better understanding for individuals and teams.** With compact solutions geared towards specific challenges.
 
-```shell
-cd my-website
+Here are some examples:
 
-npx docusaurus start
-```
-
-Your site starts at `http://localhost:3000`.
-
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and display your changes.
+*   [Vuetable-2](https://github.com/ratiw/vuetable-2)
+*   [Vue-multiselect](https://github.com/shentao/vue-multiselect)
+*   PHP [blameable](https://github.com/bakaphp/blameable)
+*   Phalcon [router](https://github.com/bakaphp/router)
