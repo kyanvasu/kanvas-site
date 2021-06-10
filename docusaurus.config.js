@@ -33,7 +33,7 @@ module.exports = {
       ],
     },
     footer: {
-      copyright: `© ${new Date().getFullYear()}Kanvas, made with <3 by MCTEKK S.R.L`,
+      copyright: `© ${new Date().getFullYear()}Kanvas, made with love by MCTEKK S.R.L`,
     },
   },
   presets: [
