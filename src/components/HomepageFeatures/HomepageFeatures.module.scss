@@ -3,11 +3,15 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 70px 0 0;
   width: 100%;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.featureImage {
+	// max-height: 240px;
+
+	img {
+		// height: 100%;
+	}
 }
+

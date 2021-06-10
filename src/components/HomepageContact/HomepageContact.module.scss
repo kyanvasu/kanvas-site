@@ -1,0 +1,12 @@
+.contactSection {
+	padding: 50px 0 30px;
+}
+
+.contactList {
+	display: flex;
+	flex-direction: column;
+
+	a {
+		margin: 20px 0;
+	}
+}
