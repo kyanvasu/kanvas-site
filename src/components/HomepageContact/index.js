@@ -5,17 +5,17 @@ import styles from './HomepageContact.module.scss';
 const contactList = [
   {
     title: 'Discord', 
-    imgUrl: '../../../static/img/discord.png',
+    image: require('@site/static/img/discord.png').default,
     link: 'https://discord.com/invite/kRc2N2M',
   },
   {
     title: 'Github',
-    imgUrl: '../../../static/img/github.png',
+		image: require('@site/static/img/github.png').default,
     link: 'https://github.com/kyanvasu',
   },
   {
     title: 'Email',
-    imgUrl: '../../../static/img/email.png',
+		image: require('@site/static/img/email.png').default,
     link: 'mailto:contact@kanvas.dev',
   },
 ];
@@ -28,9 +28,9 @@ export default function HomepageContact() {
           Connect with Us
         </h3>
         <div className={styles.contactList}>
-          {contactList.map(({title, imgUrl, link}, idx) => (
+          {contactList.map(({title, image, link}, idx) => (
             <a key={idx} href={link}>
-              <img src={imgUrl} alt={title} />
+              <img src={image} alt={title} />
             </a>
           ))}
         </div>
