@@ -28,7 +28,8 @@ module.exports = {
         },
         {
           label: 'GitHub',
-          position: 'right'
+          position: 'right',
+					href: 'https://github.com/kyanvasu',
         }
       ],
     },
