@@ -32,3 +32,94 @@ Here are some examples:
 *   [Vue-multiselect](https://github.com/shentao/vue-multiselect)
 *   PHP [blameable](https://github.com/bakaphp/blameable)
 *   Phalcon [router](https://github.com/bakaphp/router)
+
+# **How it Works**
+
+Kanvas works by providing you with a layer of common issues your app will face and microservices  connected to its common layer that will help you speed up the development process.
+
+After registering your app with our ecosystem or launching your own, you will register an app and get your unique key, this will help identify with the different services. From that point on, you can use our SDK or pre-boilerplate API (PHP, JS & Go) to start with your Backend. The same goes for Frontend or Mobile, download the boilerplate project or just use the components.
+
+You can either use some components as stand-alone or use them all together to speed up the development process of your app.
+
+Features
+*   User Management
+*   Permission Management 
+*   App based configuration
+*   Notification System
+    *   Email, Pusher, Push Notification
+*   Custom Fields
+*   Ecosystem SDK
+    *   API BoilerPlate
+    *   Frontend BoilerPlate
+    *   Mobile App BoilerPlate
+
+**Why not … ?**
+
+**Low Code Solutions or Boilerplates,** it's not that you can't use them, we are just trying to make a different approach to the problem. We are trying to provide 2 different things from them:
+
+*   Multi App Solutions 
+*   Freedom
+
+## **Main Components and Structure**
+
+![kanvas_structure_1.png](/kanvas_structure_1.png)
+
+**Kanvas API** → This API controls the whole ecosystem. (console.kanvas.dev)
+
+**Canvas-core** → Contains specific core logic of Kanvas
+
+**Canvas-library** → Contains Kanvas  components that we may want to share with other canvas related implementations
+
+**Phalcon-api** → As of now, contains both the canvas-core and canvas-library merged together, and currently acts as the main API. This will eventually disappear and be divided into the two components mentioned above.
+
+**Frontend Admin** → Frontend of the Admin/Console Ecosystem connects directly to the main Kanvas API.
+
+**Backend API SDK Skeletons** → Indirectly uses the Kanvas API via the SDK which also acts as a passthrough. Uses the canvas-library suite of components.
+
+## **Admin/Console Ecosystem Structure**
+
+Admin Ecosystem of Kanvas
+
+![kanvas_structure_2.png](/kanvas_structure_2.png)
+
+Notice:
+
+*   Specific components will be included in the frontend packages:
+    *   App Selector
+    *   App Dashboard
+    *   App Wizard
+
+## **Example Apps**
+
+### Gewaer CMS and CRM Apps
+
+Our own SaaS products apps
+
+![kanvas_structure_3.png](/kanvas_structure_3.png)
+
+Notice: This app communicates with the Kanvas SDK Skeleton API, not the main API.
+
+### Frontend Testing Site (Dev.kanvas.dev)
+
+An example of an app using the SDK + Frontend Packages
+
+![kanvas_structure_4.png](/kanvas_structure_4.png)
+
+## **Environments Details**
+
+### Development Environments:
+
+*   **Main Beta site** → beta.kanvas.dev
+*   **Console(Frontend) site** → consoledev.kanvas.dev
+*   **API** → apidev.kanvas.dev
+*   **API SDK Skeleton** → apisdkdev.kanvas.dev
+*   **SDK API + frontend packages** → sandboxdev.kanvas.dev
+*   **Frontend testing site** → dev.kanvas.dev
+
+### Production Environments:
+
+*   **Landing Page** → kanvas.dev
+*   **Admin/Console ecosystem** → console.kanvas.dev
+*   **API** → api.kanvas.dev
+*   **API SDK Skeleton** → apisdk.kanvas.dev
+*   **SDK API + frontend packages** → demo.kanvas.dev
