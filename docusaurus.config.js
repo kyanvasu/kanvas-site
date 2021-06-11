@@ -9,7 +9,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'kyanvasu',
   projectName: 'kanvas-documentation',
-	plugins: ['docusaurus-plugin-sass'],
+  plugins: ['docusaurus-plugin-sass'],
   themeConfig: {
     colorMode: {
       disableSwitch: true
