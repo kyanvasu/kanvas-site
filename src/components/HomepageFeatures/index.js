@@ -26,7 +26,7 @@ const FeatureList = [
     image: require('@site/static/img/feature_3.png').default,
     description: (
       <>
-        Save time to market developing you next big thing
+        Save time to market developing your next big thing.
       </>
     ),
   },

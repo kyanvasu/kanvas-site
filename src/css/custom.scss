@@ -27,10 +27,18 @@ h1 {
   font-size: 30px;
   line-height: 36px;
   margin-bottom: 20px;
+
+  @media screen and (min-width: 1280px) {
+    font-size: 35px;
+  }
 }
 
 h3 {
   font-size: 28px;
+
+  @media screen and (min-width: 997px) and (max-width: 1600px) {
+    font-size: 20px;
+  }
 }
 
 p {
@@ -46,13 +54,38 @@ hr {
   margin: 0;
 }
 
+.main-wrapper {
+  overflow: hidden;
+}
+
 .navbar {
   height: 70px;
   justify-content: center;
   padding: 0;
+  box-shadow: none;
 
-  &__inner {
-    max-width: 1585px;
+  .navbar__inner {
+
+    @media screen and (min-width: 767px) {
+      padding: 0 50px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      max-width: 1000px;
+      padding: 0;
+    }
+
+    @media screen and (min-width: 1440px) {
+      max-width: 1165px;
+    }
+
+    @media screen and (min-width: 1600px) {
+      max-width: 1400px;
+    }
+    
+    @media screen and (min-width: 1800px) {
+      max-width: 1585px;
+    }
   }
 
   &__brand {
@@ -108,9 +141,25 @@ hr {
 }
 
 .container {
-  max-width: 1585px;
+  max-width: 580px;
+  
+  @media screen and (min-width: 997px) {
+    max-width: 925px;
+  }
 
-  @media screen and (min-width: 767px) {
-    max-width: 580px;
+  @media screen and (min-width: 1280px) {
+    max-width: 1000px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1165px;
+  }
+
+  @media screen and (min-width: 1600px) {
+    max-width: 1400px;
+  }
+
+  @media screen and (min-width: 1800px) {
+    max-width: 1585px;
   }
 }

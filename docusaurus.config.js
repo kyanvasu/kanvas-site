@@ -28,12 +28,13 @@ module.exports = {
         },
         {
           label: 'GitHub',
-          position: 'right'
+          position: 'right',
+					href: 'https://github.com/kyanvasu',
         }
       ],
     },
     footer: {
-      copyright: `© ${new Date().getFullYear()}Kanvas, made with love by MCTEKK S.R.L`,
+      copyright: `© ${new Date().getFullYear()}Kanvas, made with 💙 by MCTEKK S.R.L`,
     },
   },
   presets: [
