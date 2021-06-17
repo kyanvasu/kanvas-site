@@ -87,7 +87,7 @@ Provide a simple interface for Redis hash table creation to any of your system t
 
 ## **Notifications** 
 
-Notifications are  short, informational messages that notify users of something that has occurred in your application. W_**e extend this feature by allowing you to manage this for multiple applications on the ecosystem. 
+Notifications are  short, informational messages that notify users of something that has occurred in your application.
 
 Notifications can be sent via:
 *   Email
