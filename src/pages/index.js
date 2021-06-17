@@ -9,8 +9,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title}`}
-      description="Open source smart code development solution, focused on developing SaaS development components so you can focus on the problem at hand.">
+      title="Open Source Smart Code Solution"
+      description="We develop SaaS development components, so you can focus on the problem at hand.">
       <HomepageHeader />
       <hr />
       <main>

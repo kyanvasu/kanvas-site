@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Kanvas | Open Source Smart Code Solution',
-  tagline: 'Dinosaurs are cool',
+  title: 'Kanvas',
+  tagline: 'Open Source Smart Code Solution',
   url: 'https://kanvas.dev/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
