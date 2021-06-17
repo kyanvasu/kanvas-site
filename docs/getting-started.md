@@ -18,6 +18,8 @@ We support this initial language:
 *   JavaScript
 *   Go
 
+Kanvas API was built with PHP, using the PhalconPHP Framework v3.x+.
+
 ## Installing a Kanvas Backend PHP API with PhalconPHP
 
 ### **Requirements**
