@@ -45,7 +45,7 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/kyanvasu/kanvas-site/tree/main/',
         },
         theme: {
           customCss: [require.resolve('./src/css/custom.scss')],
