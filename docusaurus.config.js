@@ -35,6 +35,20 @@ module.exports = {
     },
     footer: {
       copyright: `© ${new Date().getFullYear()} Kanvas, made with 💙 by MCTEKK S.R.L`,
+      links: [
+        {
+          items: [
+            {
+              //Renders the html pass-through instead of a simple link
+              html: `
+                  <a href="https://vercel.com/?utm_source=kanvas&utm_campaign=oss" target="_blank" rel="noreferrer noopener" aria-label="Powered by Vercel">
+                    <img src="static/img/powered-by-vercel.svg" class="vercel-banner" alt="Powered by Vercel" />
+                  </a>
+                `,
+            },
+          ],
+        },
+      ],
     },
   },
   presets: [
