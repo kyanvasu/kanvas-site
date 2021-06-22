@@ -36,8 +36,6 @@ These will let you know if the user has permission to run the action you desire.
 
 We also provide the general concept for most of the CRUD use cases using our AclMiddleware. 
 
-With the middleware, we check on each of the CRUD requests of the user running it can perform this action.
-
 By Default, the user can’t perform actions unless you give them permission.
 
 ## Working with the ACL

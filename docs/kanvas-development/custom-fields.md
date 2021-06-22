@@ -105,3 +105,5 @@ By version 0.1.5 of Kanvas you can also create this dynamic field via its web UI
 **Note:** Custom Fields Search will use Elasticsearch
 
 **Complex Filter (0.2.5)**
+
+@todo
