@@ -42,7 +42,7 @@ module.exports = {
               //Renders the html pass-through instead of a simple link
               html: `
                   <a href="https://vercel.com/?utm_source=kanvas&utm_campaign=oss" target="_blank" rel="noreferrer noopener" class="vercel-banner" aria-label="Powered by Vercel">
-                    <img src="img/powered-by-vercel.svg" alt="Powered by Vercel" />
+                    <img src="https://mc-canvas.s3.amazonaws.com/powered-by-vercel.svg" alt="Powered by Vercel" />
                   </a>
                 `,
             },
