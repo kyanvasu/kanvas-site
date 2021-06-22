@@ -1,0 +1,103 @@
+.heroBanner {
+  text-align: center;
+  position: relative;
+  padding: 115px 0;
+
+  @media screen and (min-width: 997px) {
+    overflow: initial;
+    padding: 170px 0 200px;
+  }
+
+  @media screen and (min-width: 1680px) {
+    padding: 30px 0 0;
+  }
+
+  > div {
+    display: flex;
+  }
+
+  h1 {
+    span {
+      color: var(--ifm-color-primary);
+    }
+
+    @media screen and (min-width: 997px) {
+      text-align: left;
+    }
+  }
+
+  p {
+    @media screen and (min-width: 997px) {
+      text-align: left;
+      max-width: 540px;
+    }
+  }
+}
+
+.heroText {
+  @media screen and (min-width: 997px) {
+    margin-right: 45px;
+    max-width: 580px;
+    flex-shrink: 0;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 680px;
+  }
+
+  @media screen and (min-width: 1680px) {
+    margin-right: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.heroImages {
+  display: none;
+  position: relative;
+
+  @media screen and (min-width: 997px) {
+    display: flex;
+
+    .heroImage1, .heroImage2 {
+      width: 300px;
+      position: absolute;
+    }
+
+    .heroImage1 {
+      z-index: 2;
+      left: 35px;
+      top: 75%;
+    }
+
+    .heroImage2 {
+      bottom: -120px;
+      left: 150px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .heroImage1, .heroImage2 {
+      width: 320px;
+    }
+
+    .heroImage1 {
+      top: 62%;
+    }
+  }
+
+  @media screen and (min-width: 1680px) {
+    align-items: flex-end;
+    margin-bottom: -7px;
+
+    .heroImage1, .heroImage2 {
+      width: 470px;
+      position: initial;
+    }
+
+    .heroImage2 {
+      transform: translateX(-245px);
+    }
+  }
+}

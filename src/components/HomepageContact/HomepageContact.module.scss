@@ -1,0 +1,30 @@
+.contactSection {
+  padding: 50px 0 30px;
+
+  @media screen and (min-width: 767px) {
+    padding: 50px 0 120px;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    padding: 70px 0 120px;
+  }
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 767px) {
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 1024px) {
+    max-width: 540px;
+  }
+
+  a {
+    margin: 20px 0;
+  }
+}
