@@ -150,6 +150,38 @@ hr {
   font-size: 18px;
   font-family: 'Open Sans', sans-serif;
   line-height: 24px;
+  position: relative;
+
+  .vercel-banner {
+    display: flex;
+  }
+
+  .footer__col {
+    margin: 0;
+  }
+
+  .footer__links {
+    margin: 15px 0 0;
+  }
+
+  > .container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 996px) {
+    .footer__links {
+      margin: 0;
+    }
+
+    .vercel-banner {
+      display: flex;
+      position: absolute;
+      top: 25px;
+      right: 50px;
+    }
+  }
 }
 
 .container {
