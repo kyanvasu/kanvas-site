@@ -74,7 +74,7 @@ class Pusher extends Job implements QueueableJobInterfase
 
 As you can see, we use the constructor to pass the information needed on this queue, and you can process it using your own logic on the handle function. 
 
-In order to call this job, we need to run the dispatch function and pass the information the jobs is expecting on its constructor.
+In order to call this job, we need to run the dispatch function and pass the information the job is expecting on its constructor.
 
 
 ```php
