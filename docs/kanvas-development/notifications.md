@@ -57,15 +57,13 @@ class ResetPassword extends Notification implements NotificationInterface
 
 You have to define a class that extends from **_Canvas\Notifications\Notification_** and implements **_NotificationInterfase._**
 
-You define the message you want to be processed and the message function and then  provide you with the following methods:
-
+You can use the `message` function to define the message that this notification will send using the following methods 
 
 *   toMail
 *   toPushNotification
 *   toRealTime
 
-You will always have the properties **toUser **and **fromUser **, with User entities so that you know who we are notifying and how is sending the notification. Also, notifications expect to receive a Phalcon Model in its construct, in reference to the entity where the action occurred that we are letting the user know.
-
+You will always have the objects **toUser** and **fromUser**, so that you know who is sending the notification and who is receiving it.
 
 ```php
     /**
@@ -113,9 +111,9 @@ class Signup extends Notification implements NotificationInterfase
         
 ```
 
-In order to create a template just access Kanvas Admin App and go to the template section. Remember we use [volt](https://docs.phalcon.io/4.0/en/volt) to parse the template you can most of its features.
+In order to create a template you need to add it to the Kanvas email_template table using Phalcon [volt](https://docs.phalcon.io/4.0/en/volt) template languague.
 
-In order to use Kanvas templates, generate providing the name, and the array of the variables you want it to replace.
+In order to use Kanvas templates, you must call the generate function, pass the name of the template and provide an array of the variables used within the template.
 
 `Template::generate('users-registration', $this->entity->toArray())`
 
