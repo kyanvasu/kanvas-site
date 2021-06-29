@@ -4,15 +4,13 @@ sidebar_position: 3
 
 # Architecture Concepts
 
-## **Kanvas Basic Concepts**
-
 At its core Kanvas will handle the overall features a SaaS system needs but with a little twist; it manages not one, but an ecosystem of apps.
 
 ![ecosystem.png](/ecosystem.png)
 
 In a future version, we plan to allow multiple ecosystems to connect between them
 
-### **Users** 
+### Users 
    
    Are the people that will be using any of the apps for the ecosystem. Few things need to be pointed out:
 
@@ -22,7 +20,7 @@ In a future version, we plan to allow multiple ecosystems to connect between the
 *   Users can have different roles per app & company.
 *   Each app within the ecosystem can determine if they have a unique authentication (password). This means that app 1 and 2 can share the same credential for the user but app 3 and 4 can have unique credentials for the same user.
 
-### **Companies** 
+### Companies
    
 Is an entity made up of associations of users, allowing the users to interact with the apps the company has subscribed to.
 
@@ -31,7 +29,7 @@ Is an entity made up of associations of users, allowing the users to interact wi
 *   We have a group of companies, this is just a way to group multiple companies under a name to allow Super admin users to view a General Invoice of their different apps.
 *   Subscription by apps is associated with the company and not the user.
    
-### **Subscriptions** 
+### Subscriptions
 
 Is the business model we chose for the Kanvas ecosystem, each company will be paying monthly / yearly fees for the different apps they subscribe to.
 
@@ -40,7 +38,7 @@ Is the business model we chose for the Kanvas ecosystem, each company will be pa
 *   Each Subscription plan belongs to an app_plan that defines its price and features for the app.
 *   At the moment all subscriptions are managed through Stripe.
     
-## **Apps** 
+## Apps
 
 Apps are the core of the Ecosystem. Each app will be independent of the other, but since they are all using the Kanvas ecosystem, they will be able to access shared services via our SDK, allowing them to avoid having to develop any of the extra services. 
 
@@ -56,19 +54,19 @@ The overall idea is to allow you to just focus on the business side.
     *   Webhooks
     *   System Modules
 
-## **System Modules**
+## System Modules
 
 These are the sections of your app that the user has access to, and at the same time, you can enhance them by adding custom fields.
 
 There is a field in our database that makes a module visible on the app menu, you can disable this if you like. You can also manually add any section in the app menu not based on the System Module.
 
-## **Custom Fields**
+## Custom Fields
 
 Extend any of your entities by adding dynamic fields to them. This gives you the flexibility to add new fields apart from the ones we support directly on your app manager.
 
 As a side note, we use elastic search to manage custom fields to simplify the lookup of information.
 
-## **FileSystem** 
+## FileSystem
 
 Allows you to manage files (upload, list, edit, delete) for any system modules of the ecosystem. This helps to have a simple interface to manage all our files.
 
@@ -77,15 +75,15 @@ Allows you to manage files (upload, list, edit, delete) for any system modules o
 *   Files can be stored either in an AWS S3 bucket or locally.
 *   One file can be related to multiple system modules
     
-## **Sessions**
+## Sessions
 
 [JWT](https://jwt.io/) is used to manage access to all of the API resources via the access token. We provide an additional level of control for these tokens, allowing each of the admins, if needed, to expire or block a user session token after creation.
 
-## **HashTables** 
+## HashTables
 
 Provide a simple interface for Redis hash table creation to any of your system tables. Is it the same as custom fields? In theory yes, the only difference is we don't provide web UI to manage the different keys, this is more for developers to manage.
 
-## **Notifications** 
+## Notifications
 
 Notifications are  short, informational messages that notify users of something that has occurred in your application.
 
@@ -96,7 +94,7 @@ Notifications can be sent via:
 *   Websocket
 *   3rd party system
 
-## **Linked Sources** 
+## Linked Sources 
 
 Allows you to associate users to different sources. Sources are 3rd party sites or apps the user will interact with, examples
     *   Managing social login
