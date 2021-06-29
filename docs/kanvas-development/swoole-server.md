@@ -10,4 +10,4 @@ Swoole provides an internal HTTP server, replacing PHP-FPM to manage your PHP pr
 
 **Note:** if you decide to use Swoole, remember you will need to restart your server in other for code to be refreshed on any changes.
 
-We provide examples in storage/ci/nginx-swoole on how to configure Swoole with NGINX. We recommend this approach since it will b
+We provide examples in storage/ci/nginx-swoole on how to configure Swoole with NGINX.

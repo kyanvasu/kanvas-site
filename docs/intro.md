@@ -33,7 +33,7 @@ Here are some examples:
 *   PHP [blameable](https://github.com/bakaphp/blameable)
 *   Phalcon [router](https://github.com/bakaphp/router)
 
-# **How it Works**
+## How it Works
 
 Kanvas works by providing you with a layer of common issues your app will face and microservices  connected to its common layer that will help you speed up the development process.
 
@@ -60,7 +60,7 @@ Features
 *   Multi App Solutions 
 *   Freedom
 
-## **Main Components and Structure**
+## Main Components and Structure
 
 ![kanvas_structure_1.png](/kanvas_structure_1.png)
 

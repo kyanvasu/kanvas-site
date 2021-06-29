@@ -22,7 +22,7 @@ Kanvas API was built with PHP, using the PhalconPHP Framework v3.x+.
 
 ## Installing a Kanvas Backend PHP API with PhalconPHP
 
-### **Requirements**
+### Requirements
 
 Kanvas PHP Backend Template has a few requirements, all these are satisfied by our Docker Images. We highly recommend you use them for your development environment.
 
@@ -41,13 +41,13 @@ However, if you plan on running without them, you will need the following requir
     *   RabbitMQ 
 
 
-### **Installation**
+### Installation
 
 You will need to access kanvas.dev and create your account. Register a new App and get the Private and Public Application keys.
 
 Once you have the keys, you can download the API Templates on this link, or you can skip this section where you learn how to start working with the Kanvas SDK / Components.
 
-### **Configuration**
+### Configuration
 
 **Public Director**
 

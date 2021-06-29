@@ -50,7 +50,7 @@ php cli/cli.php elastic createDocuments 'Gewaer\Models\Leads' 1
 
 ```  
 
-## Models:
+## Models
 
 ```php
 use Baka\Contracts\Elasticsearch\ElasticIndexModelTrait;

@@ -184,7 +184,7 @@ So on the controller, you can specify your own query string directly in the cons
 **Note:** It doesn't matter if the user now sends ?q=(is_deleted:1), by specifying this search conditions on the construct, you are always overwriting those conditions. But you can still add additional conditions on the query string.
 
 
-## **Additional Relationship Fields**
+## Additional Relationship Fields
 
 Same as with the query string search, you can filter the results by relationship directly in the controller. 
 
