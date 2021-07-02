@@ -10,7 +10,7 @@ In Kanvas we leverage elastic to help us perform complex HTTP query search for c
 
 We use opendistro SQL to help devs write queries instead of relying on Elastic complex search configuration. In this section, we are going to cover how to use it with Kanvas.
 
-## Intalling Plugin
+## Installing Plugin
 Installing the plugin is simple. First, go to the elastic container or services and run the following command.
 
 ```
@@ -37,7 +37,7 @@ These are the representations of a table in elastic, they follow a JSON style fo
 ./runCli elastic createDocuments /namespace/model maxDepth 
 ```
 
-### Delete a Indices
+### Delete an Indices
 
 ```
 ./runCLI elastic deleteIndex /namespace/model
@@ -50,7 +50,7 @@ php cli/cli.php elastic createDocuments 'Gewaer\Models\Leads' 1
 
 ```  
 
-## Models:
+## Models
 
 ```php
 use Baka\Contracts\Elasticsearch\ElasticIndexModelTrait;
@@ -98,7 +98,7 @@ $leadElastic = $lead->deleteFromElastic();
 
 ```
 
-deleteFromElastic : Same concept base on the model id delete the document from elastic.
+deleteFromElastic : Deletes this entity from the elastic document.
 
 ```php
  $lead = Leads::findFirstInElastic([

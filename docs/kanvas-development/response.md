@@ -41,7 +41,7 @@ We expect you to use this method in all methods of the API that  send back  data
 
 By passing any variable type, with the help of Phalcon we return a JSON type content to the consumer. 
 
-Now we also allow you to change the status and message if you choose on the params, but at the same time you can just use [Phalcon\Http\Response](https://docs.phalcon.io/3.4/en/api/Phalcon_Http) methods.
+Since this is a [Phalcon\Http\Response](https://docs.phalcon.io/3.4/en/api/Phalcon_Http) you can also change the status of the message via set status code.
 
 
 ```php

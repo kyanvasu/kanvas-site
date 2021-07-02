@@ -36,8 +36,6 @@ These will let you know if the user has permission to run the action you desire.
 
 We also provide the general concept for most of the CRUD use cases using our AclMiddleware. 
 
-With the middleware, we check on each of the CRUD requests of the user running it can perform this action.
-
 By Default, the user can’t perform actions unless you give them permission.
 
 ## Working with the ACL
@@ -47,7 +45,7 @@ Kanvas uses [Phalcon default ACL](https://docs.phalcon.io/3.4/en/acl), we provid
 **Notice: _We expect you to understand the basics of the ACL, so please review Phalcon Documentation_**
 
 
-### Add Role:
+### Add Role
 
 Specify the App name “dot” the role name. AppName.RoleName
 
@@ -56,7 +54,7 @@ $this->acl->addRole('Default.Admins');
 ```
 
 
-### Add Resource:
+### Add Resource
 
 Specify the App Name “dot” Resource Name and add the resource permissions options in an array 
 
@@ -71,7 +69,7 @@ $this->acl->addResource(
         );
 ```
 
-### Associate Role with it's Resource: 
+### Associate Role with it's Resource
 
 You can do this via the web UI, but sometimes you will need to do it manually via code by giving in this specific order:
 
@@ -91,7 +89,7 @@ $this->acl->allow(
         );
 ```
 
-### Add Role to user: 
+### Add Role to user
 
 You can do this via the web UI, but sometimes you will need to do it manually via code.
 

@@ -165,7 +165,7 @@ We allow you to apply filters directly in the controllers, so for example if you
 ```
 
 
-So on the controller onConstruct you define use the params **_additionalSearchFields_** and pass the conditional. You can also pass multiple conditionals.
+So on the controller, you can specify your own query string directly in the constructor `onConstruct`, via **_additionalSearchFields_**.
 
 
 ```php
@@ -184,7 +184,7 @@ So on the controller onConstruct you define use the params **_additionalSearchFi
 **Note:** It doesn't matter if the user now sends ?q=(is_deleted:1), by specifying this search conditions on the construct, you are always overwriting those conditions. But you can still add additional conditions on the query string.
 
 
-## **Additional Relationship Fields**
+## Additional Relationship Fields
 
 Same as with the query string search, you can filter the results by relationship directly in the controller. 
 
@@ -264,7 +264,7 @@ You can also overwrite the sort and limit that we get from the query string usin
 
 Like we mentioned before, elasticsearch parser works the same way as normal SQL so any of the previous queries will work. What you won't get are searches for **_relationships and custom fields_**. 
 
-Why? Simple. Elasticsearch is built for search and you can create a better index structure than what you use in your db, so we expect you to build a more complex index that uses nested properties to perform the same function has relationship. 
+Why? Simple. We can build simpler searches with nested properties instead of relying on DB relationships.
 
 Example of the same query for the previous example now using elastic:
 
