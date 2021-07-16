@@ -42,6 +42,8 @@ export AWS_PROFILE=user1
 ```sh
 setx AWS_PROFILE user1
 ```
+***Notice:*** the value of the user1 is the name of the AWS CLI Profile
+
 ## Setup of the environment
 
 ### Changing the locals.tf file
