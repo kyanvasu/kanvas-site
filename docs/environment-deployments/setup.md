@@ -56,7 +56,20 @@ setx AWS_PROFILE user1
 
 The ```locals.tf``` file contains all the values for the environment builder with terraform. Change them as you like for your environment. Furthermore, is a brief description of every field:
 
-*
+* k8s_service_account_name
+* k8s_service_account_autoscaler
+* eks_api_name
+* eks_environment_name
+* aws_ecr_repo_name
+* aws_ecr_image_tag
+* aws_region
+* aws_account_id
+* aws_ecr_login_command 
+* docker_tag_command
+* ecr_push_command
+* ecr_repo_uri
+* aws_env_s3_bucket_name 
+* aws_env_s3_bucket_prefix_key
 
 ### Changing the ```values.yaml``` file
 
