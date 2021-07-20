@@ -1,10 +1,10 @@
 # Initial Setup
 
-## ***Description***
+## Description
 
 Setting up new environments for testing and production purposes has always been hard. The struggle of setting them up and deploying them fast is a monumental effort to be made between developers and devops. As a solution, a builder was made to make it really easy for any team member to deploy custom environments.
 
-## ***Prerequisites***
+## Prerequisites
 
 - AWS Account Keys
 - [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) installation
@@ -15,7 +15,7 @@ Setting up new environments for testing and production purposes has always been 
 
 &nbsp;
 
-## ***Setup AWS CLI***
+## Setup AWS CLI
 
 Before deploying your custom environment you need first setup your AWS Account and AWS CLI.
 
@@ -46,11 +46,11 @@ export AWS_PROFILE=user1
 ```sh
 setx AWS_PROFILE user1
 ```
-***Notice:*** the value of the user1 is the name of the AWS CLI Profile
+**Notice:** the value of the user1 is the name of the AWS CLI Profile
 
 &nbsp;
 
-## ***Setup of the environment***
+## Setup of the environment
 
 ### Changing the ```locals.tf``` file
 
@@ -121,12 +121,12 @@ The ```values.yaml``` file contains all the values for the kubernetes pods and o
 
 There are two sections here, one for the api and one for queues, each of them has their own values for their pods.
 
-##### ***API pod values***
+##### API pod values
 * api :
     * name : Name of the pod
     * containerName : Name of the container inside de pod.
 
-##### ***Queue pods values***
+##### **Queue pods values**
 * jobs :
     * name : Name of the jobs queue pod
     * containerName : Name of the container inside de pod.
