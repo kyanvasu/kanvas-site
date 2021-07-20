@@ -56,43 +56,43 @@ setx AWS_PROFILE user1
 
 The ```locals.tf``` file contains all the values for the environment builder with terraform. Change them as you like for your environment. Furthermore, is a brief description of every field:
 
-* ***eks_cluster_name*** : 
+* **eks_cluster_name** : 
     * description : Name of the Kubernetes Cluster in AWS EKS.
     * example : `crm-api`
-* ***eks_namespace_name*** : 
+* **eks_namespace_name** : 
     * description : Name of the Kubernetes environment namespace.
     * example : `development` or `staging` or whatever you like.
-* ***_k8s_service_account_name*** : 
+* **_k8s_service_account_name** : 
     * description : Name of the Kubernetes service account.
-* ***_k8s_service_account_autoscaler*** : 
+* **_k8s_service_account_autoscaler** : 
     * description : Name of the Kubernetes autoscaler account.
-* ***helm_chart_name*** : 
+* **helm_chart_name** : 
     * description : Name of the Helm Chart in the Kubernetes Cluster.
     * example : `crm-api`
-* ***aws_ecr_repo_name*** : 
+* **aws_ecr_repo_name** : 
     * description : Name of the AWS ECR repository.
     * example : `crm-api`
-* ***aws_ecr_image_tag*** : 
+* **aws_ecr_image_tag** : 
     * description : Name of the tag for AWS ECR repository image.
     * example : `latest` or `develop`
-* ***aws_region*** : 
+* **aws_region** : 
     * description : AWS Region Name.
     * example : `us-east-1`
-* ***aws_account_id*** : 
+* **aws_account_id** : 
     * description : Your AWS Acccount Id.
     * example : `23445343455`
-* ***_aws_ecr_login_command*** : 
+* **_aws_ecr_login_command** : 
     * description : Default AWS login command for Docker Login in AWS ECR.
-* ***_docker_tag_command*** : values for pushing.
+* **_docker_tag_command** : values for pushing.
     * description : Default docker tag command to tag a docker image with AWS ECR 
-* ***_ecr_push_command*** : 
+* **_ecr_push_command** : 
     * description : Default AWS command to push a local docker image to AWS ECR.
-* ***_ecr_repo_uri*** : 
+* **_ecr_repo_uri** : 
     * description : AWS ECR Repository URI.
-* ***aws_env_s3_bucket_name*** : 
+* **aws_env_s3_bucket_name** : 
     * description : AWS S3 bucket name where the environment values are stored.
     * example : `crmapi-cluster`
-* ***aws_env_s3_bucket_prefix_key*** : 
+* **aws_env_s3_bucket_prefix_key** : 
     * description : AWS S3 bucket path to environment values file.
     * example : `/crm-api-dev/salesassist_dev` where `salesassist_dev` is the name of the file.
 
