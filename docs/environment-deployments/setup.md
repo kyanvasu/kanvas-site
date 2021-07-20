@@ -1,10 +1,10 @@
 # Initial Setup
 
-## ***Description***
+## Description
 
 Setting up new environments for testing and production purposes has always been hard. The struggle of setting them up and deploying them fast is a monumental effort to be made between developers and devops. As a solution, a builder was made to make it really easy for any team member to deploy custom environments.
 
-## ***Prerequisites***
+## Prerequisites
 
 - AWS Account Keys
 - AWS CLI
@@ -15,7 +15,7 @@ Setting up new environments for testing and production purposes has always been 
 
 &nbsp;
 
-## ***Setup AWS CLI***
+## Setup AWS CLI
 
 Before deploying your custom environment you need first setup your AWS Account and AWS CLI.
 
@@ -46,30 +46,30 @@ export AWS_PROFILE=user1
 ```sh
 setx AWS_PROFILE user1
 ```
-***Notice:*** the value of the user1 is the name of the AWS CLI Profile
+**Notice:** the value of the user1 is the name of the AWS CLI Profile
 
 &nbsp;
 
-## ***Setup of the environment***
+## Setup of the environment
 
 ### Changing the ```locals.tf``` file
 
 The ```locals.tf``` file contains all the values for the environment builder with terraform. Change them as you like for your environment. Furthermore, is a brief description of every field:
 
-* ***_k8s_service_account_name*** : Name of the Kubernetes service account.
-* ***_k8s_service_account_autoscaler*** : Name of the Kubernetes autoscaler account.
-* ***helm_chart_name*** : Name of the Helm Chart in the Kubernetes Cluster.
-* ***k8s_environment_name*** : Name of the Kubernetes environment namespace(Ex: development).
-* ***aws_ecr_repo_name*** : Name of the AWS ECR repository.
-* ***aws_ecr_image_tag*** : Name of the tag for AWS ECR repository image (Ex:latest).
-* ***aws_region*** : AWS Region Name.
-* ***aws_account_id*** : Your AWS Acccount Id(Ex: 23445343455).
-* ***_aws_ecr_login_command*** : Default AWS login command for Docker Login in AWS ECR.
-* ***_docker_tag_command*** : Default docker tag command to tag a docker image with AWS ECR values for pushing.
-* ***_ecr_push_command*** : Default AWS command to push a local docker image to AWS ECR.
-* ***_ecr_repo_uri*** : AWS ECR Repository URI.
-* ***aws_env_s3_bucket_name*** : AWS S3 bucket name where the environment values are stored.
-* ***aws_env_s3_bucket_prefix_key*** : AWS S3 bucket path to environment values file.
+* **_k8s_service_account_name** : Name of the Kubernetes service account.
+* **_k8s_service_account_autoscaler** : Name of the Kubernetes autoscaler account.
+* **helm_chart_name** : Name of the Helm Chart in the Kubernetes Cluster.
+* **k8s_environment_name** : Name of the Kubernetes environment namespace(Ex: development).
+* **aws_ecr_repo_name** : Name of the AWS ECR repository.
+* **aws_ecr_image_tag** : Name of the tag for AWS ECR repository image (Ex:latest).
+* **aws_region** : AWS Region Name.
+* **aws_account_id** : Your AWS Acccount Id(Ex: 23445343455).
+* **_aws_ecr_login_command** : Default AWS login command for Docker Login in AWS ECR.
+* **_docker_tag_command** : Default docker tag command to tag a docker image with AWS ECR values for pushing.
+* **_ecr_push_command** : Default AWS command to push a local docker image to AWS ECR.
+* **_ecr_repo_uri** : AWS ECR Repository URI.
+* **aws_env_s3_bucket_name** : AWS S3 bucket name where the environment values are stored.
+* **aws_env_s3_bucket_prefix_key** : AWS S3 bucket path to environment values file.
 
 **Warning**: Fields prefixed with  `_`  should not be changed.
 
@@ -96,12 +96,12 @@ The ```values.yaml``` file contains all the values for the kubernetes pods and o
 
 There are two sections here, one for the api and one for queues, each of them has their own values for their pods.
 
-##### ***API pod values***
+##### API pod values
 * api :
     * name : Name of the pod
     * containerName : Name of the container inside de pod.
 
-##### ***Queue pods values***
+##### **Queue pods values**
 * jobs :
     * name : Name of the jobs queue pod
     * containerName : Name of the container inside de pod.
