@@ -7,10 +7,10 @@ Setting up new environments for testing and production purposes has always been 
 ## Prerequisites
 
 - AWS Account Keys
-- AWS CLI
-- Docker installation
-- Kubernetes installation
-- Terraform installation
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html) installation
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) installation
+- [Kubernetes](https://kubernetes.io/releases/download/) installation
+- [Terraform](https://www.terraform.io/downloads.html) installation
 - Add all the files from the [environment-builder](https://github.com/kyanvasu/environment_builder) repository to the root of your Kanvas API project.
 
 &nbsp;
@@ -56,20 +56,45 @@ setx AWS_PROFILE user1
 
 The ```locals.tf``` file contains all the values for the environment builder with terraform. Change them as you like for your environment. Furthermore, is a brief description of every field:
 
-* **_k8s_service_account_name** : Name of the Kubernetes service account.
-* **_k8s_service_account_autoscaler** : Name of the Kubernetes autoscaler account.
-* **helm_chart_name** : Name of the Helm Chart in the Kubernetes Cluster.
-* **k8s_environment_name** : Name of the Kubernetes environment namespace(Ex: development).
-* **aws_ecr_repo_name** : Name of the AWS ECR repository.
-* **aws_ecr_image_tag** : Name of the tag for AWS ECR repository image (Ex:latest).
-* **aws_region** : AWS Region Name.
-* **aws_account_id** : Your AWS Acccount Id(Ex: 23445343455).
-* **_aws_ecr_login_command** : Default AWS login command for Docker Login in AWS ECR.
-* **_docker_tag_command** : Default docker tag command to tag a docker image with AWS ECR values for pushing.
-* **_ecr_push_command** : Default AWS command to push a local docker image to AWS ECR.
-* **_ecr_repo_uri** : AWS ECR Repository URI.
-* **aws_env_s3_bucket_name** : AWS S3 bucket name where the environment values are stored.
-* **aws_env_s3_bucket_prefix_key** : AWS S3 bucket path to environment values file.
+* **eks_cluster_name** : 
+    * description : Name of the Kubernetes Cluster in AWS EKS.
+    * example : `crm-api`
+* **eks_namespace_name** : 
+    * description : Name of the Kubernetes environment namespace.
+    * example : `development` or `staging` or whatever you like.
+* **_k8s_service_account_name** : 
+    * description : Name of the Kubernetes service account.
+* **_k8s_service_account_autoscaler** : 
+    * description : Name of the Kubernetes autoscaler account.
+* **helm_chart_name** : 
+    * description : Name of the Helm Chart in the Kubernetes Cluster.
+    * example : `crm-api`
+* **aws_ecr_repo_name** : 
+    * description : Name of the AWS ECR repository.
+    * example : `crm-api`
+* **aws_ecr_image_tag** : 
+    * description : Name of the tag for AWS ECR repository image.
+    * example : `latest` or `develop`
+* **aws_region** : 
+    * description : AWS Region Name.
+    * example : `us-east-1`
+* **aws_account_id** : 
+    * description : Your AWS Acccount Id.
+    * example : `23445343455`
+* **_aws_ecr_login_command** : 
+    * description : Default AWS login command for Docker Login in AWS ECR.
+* **_docker_tag_command** : values for pushing.
+    * description : Default docker tag command to tag a docker image with AWS ECR 
+* **_ecr_push_command** : 
+    * description : Default AWS command to push a local docker image to AWS ECR.
+* **_ecr_repo_uri** : 
+    * description : AWS ECR Repository URI.
+* **aws_env_s3_bucket_name** : 
+    * description : AWS S3 bucket name where the environment values are stored.
+    * example : `crmapi-cluster`
+* **aws_env_s3_bucket_prefix_key** : 
+    * description : AWS S3 bucket path to environment values file.
+    * example : `/crm-api-dev/salesassist_dev` where `salesassist_dev` is the name of the file.
 
 **Warning**: Fields prefixed with  `_`  should not be changed.
 
