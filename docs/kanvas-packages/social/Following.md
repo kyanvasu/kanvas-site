@@ -85,5 +85,18 @@ OR
 $user = Users::findFirstByDisplayname('sparohawk');
 
 //current logged in user , unfollow the entity
-$this->userData->ufFollow($user);
+$this->userData->unFollow($user);
 ```
+
+Following Counters
+-----
+
+Get the # of following for the specify entity class type
+
+
+Followers Counters
+-----
+
+Get the # of followers for the specify entity class type
+
+
