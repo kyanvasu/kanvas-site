@@ -4,31 +4,29 @@ sidebar_position: 1
 
 # Introduction
 
-The Kanvas SDK library provides access to the Kanvas API from JavaScript related applications.
+Kanvas Social package , allows you to implement a social layer to any kanvas app.
 
-## Requirements
+What do we consider a social layer?
+- Follow Entity
+- User Feeds
+- Group
+- Channels
+- Comment Interactions
 
-Node 10+.
+Indexing Elastic Messages
+-------------------------
 
-## Installation
+To create a new index for messages use the following command:
 
-```bash
-npm install @kanvas/js-sdk
+``` bash
+php cli/cli.php social indexMessages
 ```
 
-## Usage
+Erasing the messages index
+-------------------------
 
-The SDK needs to be configured with your application key and your API base url.
+In case you want you want to erase the messages index, in your terminal, execute the following:
 
-```js
-import KanvasSDK from '@kanvas/js-sdk';
-
-const client = new KanvasSDK({
-  appKey: 'e90d5f51-d9e2-4c5e-9183-8313e30c6da3',
-  baseUrl: 'https://api.domain.com/v2'
-});
-
-client.users.getById(1).then((response) => {
-  // do something
-});
+``` bash
+ php cli/cli.php social eraseMessages
 ```
