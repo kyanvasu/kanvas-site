@@ -93,10 +93,29 @@ Following Counters
 
 Get the # of following for the specify entity class type
 
+```php
+//current logged in user , get the total # of followers from all entities
+$this->userData->getTotalFollowers();
+
+//for the current user get the total # of followers of type user
+$this->userData->getTotalFollowers(Users::class);
+
+```
 
 Followers Counters
 -----
 
 Get the # of followers for the specify entity class type
 
+```php
+//current logged in user , get the total # of followers from all entities
+$this->userData->getTotalFollowing();
+
+//for the current user get the total # of followers of type user
+$this->userData->getTotalFollowing(Users::class);
+
+//for the current user get the total # of followers of type books
+$this->userData->getTotalFollowing(Books::class);
+
+```
 
