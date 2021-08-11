@@ -97,8 +97,12 @@ Get the # of following for the specify entity class type
 //current logged in user , get the total # of followers from all entities
 $this->userData->getTotalFollowers();
 
-//for the current user get the total # of followers of type user
-$this->userData->getTotalFollowers(Users::class);
+//to get the total followers of any other entity
+$book = Books::findFirst();
+$total = Follow::getTotalFollowers($book);
+
+//Or add the trait to the book entity
+$book->getTotalFollowers();
 
 ```
 
