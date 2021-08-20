@@ -8,6 +8,8 @@ Kanvas Social package , allows you to implement a social layer to any kanvas app
 
 What do we consider a social layer?
 - Follow Entity
+- User Interactions
+- Comment System
 - User Feeds
 - Group
 - Channels

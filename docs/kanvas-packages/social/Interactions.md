@@ -130,6 +130,8 @@ class Tags extends BaseModel
 $tag = Tags::findFirst(1);
 
 $totalInteractions = $tag->getTotalInteractions(EnumsInteractions::RATE);
+$totalInteractionsLikes = $tag->getTotalInteractions(EnumsInteractions::LIKES);
+$totalInteractionsShared = $tag->getTotalInteractions(EnumsInteractions::SHARE);
 
 ```
 
