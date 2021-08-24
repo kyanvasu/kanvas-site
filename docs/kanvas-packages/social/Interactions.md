@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Introduction
+# Interactions
 
 ```
 interaction is the situation or occurrence in which two or more objects or events act upon one another to produce a new effect; the effect resulting from such a situation or occurrence while reaction is an action or statement in response to a stimulus or other event.

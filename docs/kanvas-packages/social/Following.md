@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Introduction
+# Following
 
 We all know social networks by now, one of its core features it allowing users to follow things to provide a network effect, the more entities I follow the more engagement it will provide the user to the platform.
 

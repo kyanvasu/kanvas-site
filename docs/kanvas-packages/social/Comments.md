@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Introduction
+# Comments
 
 We all know what a comment system is , and if you still need some clarification
 
