@@ -5,7 +5,9 @@ sidebar_position: 2
 # Interactions
 
 ```
-interaction is the situation or occurrence in which two or more objects or events act upon one another to produce a new effect; the effect resulting from such a situation or occurrence while reaction is an action or statement in response to a stimulus or other event.
+interaction is the situation or occurrence in which two or more objects or events act upon one another to produce a
+new effect; the effect resulting from such a situation or occurrence while reaction is an action 
+or statement in response to a stimulus or other event.
 ```
 
 We all know social networks by now, one of its core features it allowing users to interact with any of its entity. What are interactions? Liking, Saving, Sharing, Rating 
