@@ -7,7 +7,9 @@ sidebar_position: 3
 We all know what a comment system is , and if you still need some clarification
 
 ```
-Comment systems, also known as commenting software, allow users to comment on a website, typically below a news article or blog post. Comment systems give website visitors the ability to engage with a website by commenting their views or reaction to the content on the page.
+Comment systems, also known as commenting software, allow users to comment on a website, 
+typically below a news article or blog post. Comment systems give website visitors the 
+ability to engage with a website by commenting their views or reaction to the content on the page.
 ```
 
 Now , we provide the layers to add comments to any entity in your app
