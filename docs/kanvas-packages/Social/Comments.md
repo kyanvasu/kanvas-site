@@ -23,12 +23,24 @@ Our comment system has the following feature
 Add Comment to Entity
 -------------------
 
+Add the Commentable Trait to your Entity
+
+```php
+<?php
+
+class Messages implements BaseModel
+{
+    use CommentableTrait;
+}
+
+```
+
 ```php
 
 //find message
 $message = Messages::findFirst();
 
-//current logged in user , likes now this user
+//add the comment to the entity
 $message->addComment($user, 'text');
 ```
 
@@ -50,8 +62,15 @@ Update Comment of a Entity
 //find message
 $message = Messages::findFirst(3);
 
-//current logged in user , likes now this user
-$message->updateComment($user, 'text');
+//if it doesn't exist throw exception
+$comment = $message->getCommentById($id);
+
+$user = $this->userData;
+
+//update the comment for this current msg
+//if the user is not the owner of this comment it will throw a AuthException
+$comment->update($user, 'text');
+
 ```
 
 OR
@@ -61,7 +80,7 @@ OR
 $message = Messages::findFirst(3);
 
 //add a comment to the message 
-$messageComment = Comments::update($message, $user, 'text');
+$messageComment = Comments::getById($message, $id)->update($user, 'text');
 ```
 
 Get All Comments
@@ -82,7 +101,7 @@ OR
 //find message
 $message = Messages::findFirst(3);
 
-//add a comment to the message 
+//get all comments
 $messageComment = Comments::getAll($message, $page = 1, $limit = 25);
 ```
 
@@ -95,7 +114,7 @@ Get a Single Comments
 $message = Messages::findFirst(3);
 
 //get all the comments of the given entity
-$message->getComment($id);
+$message->getCommentById($id);
 ```
 
 OR
@@ -104,8 +123,11 @@ OR
 //find message
 $message = Messages::findFirst(3);
 
-//add a comment to the message 
-$messageComment = Comments::getOne($message, $id);
+//get one by id
+$messageComment = Comments::getById($message, $id);
+
+//like the comment
+$this->user->likes($messageComment);
 ```
 
 
@@ -117,8 +139,8 @@ Delete Comment of a Entity
 //find message
 $message = Messages::findFirst(3);
 
-//current logged in user , likes now this user
-$message->deleteComment($user);
+//delete the comment and verify the user owns it
+$message->getCommentById($id)->delete($user);
 ```
 
 OR
@@ -127,8 +149,18 @@ OR
 //find message
 $message = Messages::findFirst(3);
 
-//add a comment to the message 
-$messageComment = Comments::delete($message, $user, 'text');
+//delete a comment from this message 
+$messageComment = Comments::delete($message, $commentId, $user);
+```
+
+OR
+
+```php
+//find message
+$message = Messages::findFirst(3);
+
+//delete a comment from this message 
+$messageComment = Comments::deleteAll($message);
 ```
 
 Add a Reply to a Comment
@@ -150,5 +182,5 @@ OR
 $message = Messages::findFirst(3);
 
 //add a comment to the message 
-$messageComment = Comments::getOne($message, $id)->reply('text', $user);
+$messageComment = Comments::getById($message, $id)->reply($user, 'text');
 ```
