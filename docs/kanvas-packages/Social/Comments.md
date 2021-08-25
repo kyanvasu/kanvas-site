@@ -19,6 +19,8 @@ Our comment system has the following feature
 - Add replied to a Comment
 - Add Interactions to any comment (likes)
 - Add reaction to any comment (emojis)
+- Mentions
+- Notifications
 
 Add Comment to Entity
 -------------------
@@ -30,7 +32,7 @@ Add the Commentable Trait to your Entity
 
 class Messages implements BaseModel
 {
-    use CommentableTrait;
+    use Commentable
 }
 
 ```
