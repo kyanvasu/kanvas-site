@@ -174,7 +174,7 @@ Add a Reply to a Comment
 $message = Messages::findFirst(3);
 
 //current logged in user , likes now this user
-$message->getComment($id)->reply('text', $user);
+$message->getComment($id)->reply($user, 'text');
 ```
 
 OR
