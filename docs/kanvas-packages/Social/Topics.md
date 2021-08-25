@@ -18,8 +18,8 @@ Features:
 Create a Topic
 -------------------
 ```php
-$topic = Topics::create($message, 'business  🏆');
-$topic = Topics::createMultiple($message, ['business  🏆', 'Saving']);
+$topic = Topics::create('business  🏆');
+$topic = Topics::createMultiple(['business  🏆', 'Saving']);
 ```
 
 Update a Topic
@@ -121,3 +121,9 @@ $message = Messages::findFirst(3);
 //will remove all other topics from entity except these 2
 Topics::syncTopicsOfEntity($message, ['business  🏆', 'Saving']);
 ```
+
+List Entity by Topics
+----------------
+
+List all entity of a specific type attached to this topic
+
