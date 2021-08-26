@@ -1,6 +1,6 @@
 # PDF Action
 
-Use this action when you want send emails using emails_templates
+Use this action when you want create PDF with data of the entity
 
 # Setup
 
