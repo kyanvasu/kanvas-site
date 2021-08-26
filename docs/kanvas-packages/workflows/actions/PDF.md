@@ -9,7 +9,7 @@ Use this action when you want send emails using emails_templates
 In the workflows database go to the actions table and insert this code
 
 ```sql
-INSERT INTO actions(`name`,`model_name`) VALUES ('SendMail', 'Kanvas\Packages\WorkflowsRules\Actions\PDF');
+INSERT INTO actions(`name`,`model_name`) VALUES ('PDF', 'Kanvas\Packages\WorkflowsRules\Actions\PDF');
 ```
 
 2. Asociate with the system_module in table rules_workflow_actions, this system_modules_id available the action for use the rules with this system_module.
@@ -86,4 +86,4 @@ INSERT INTO `rules_actions` (`id`, `rules_id`, `rules_workflow_actions_id`, `cre
 
 ## Note
 
-<b>In your system maybe the ids are has other values, keep in mind this please.<b>
+<b>In your system maybe the ids are has other values, keep in mind this please.</b>

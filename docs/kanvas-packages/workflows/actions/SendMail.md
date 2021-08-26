@@ -56,7 +56,6 @@ The actions used the rules id and the rules_workflow_actions_id for dispatch the
 INSERT INTO `rules_actions` (`id`, `rules_id`, `rules_workflow_actions_id`, `created_at`, `updated_at`, `is_deleted`) VALUES (NULL, '1', '1', '2021-05-14 17:40:43', NULL, '0');
 ```
 
-
 ## Note
 
-<b>In your system maybe the ids are has other values, keep in mind this please.<b>
+<b>In your system maybe the ids are has other values, keep in mind this please.</b>
