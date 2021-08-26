@@ -24,7 +24,7 @@ INSERT INTO `rules_conditions` (`id`, `rules_id`, `attribute_name`, `operator`, 
 ```
 
 3. In the rules_actions table
-Here you going to insert the actions that the rule will execute if is successful. This actions are the PDF and the ADF. <i>Note the rules_workflow_actions_id is a foreing key of rules_workflow_actions no the actions</i>
+Here you going to insert the actions that the rule will execute if is successful. This actions are the PDF and the ADF. <i>Note the rules_workflow_actions_id is a foreing key of rules_workflow_actions no the actions</i >
 ```sql
 INSERT INTO `rules_actions` (`id`, `rules_id`, `rules_workflow_actions_id`, `created_at`, `updated_at`, `is_deleted`) VALUES (NULL, '1', '2', '2021-05-14 17:40:43', NULL, '0'), (NULL, '1', '3', '2021-05-14 17:40:43', NULL, '0');
 ```
