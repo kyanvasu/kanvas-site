@@ -89,20 +89,72 @@ In this example we going to use the user model as entity. You can set the rule t
 ```
 
 ```sql
-INSERT INTO `rules` (`id`, `systems_modules_id`, `companies_id`, `rules_types_id`, `name`, `description`, `pattern`, `params`, `created_at`, `updated_at`, `is_deleted`) VALUES (NULL, '1', '108', '1', 'Create PDF', 'This is a Rule for create PDF', '1', '{\r\n    \"template\":\"new_user_adf\",\r\n}', '2021-08-18 00:00:00', NULL, '0');
+INSERT INTO `rules`
+            (`id`,
+             `systems_modules_id`,
+             `companies_id`,
+             `rules_types_id`,
+             `name`,
+             `description`,
+             `pattern`,
+             `params`,
+             `created_at`,
+             `updated_at`,
+             `is_deleted`)
+VALUES      (NULL,
+             '1',
+             '108',
+             '1',
+             'Create PDF',
+             'This is a Rule for create PDF',
+             '1',
+             '{\r\n    \"template\":\"new_user_adf\",\r\n}',
+             '2021-08-18 00:00:00',
+             NULL,
+             '0'); 
 ```
 2. Create conditions
 
 *The list of operators is [here](https://symfony.com/doc/current/components/expression_language/syntax.html#comparison-operators)*
 
 ```sql
-INSERT INTO `rules_conditions` (`id`, `rules_id`, `attribute_name`, `operator`, `value`, `is_custom_attriube`, `created_at`, `updated_at`, `is_deleted`) VALUES (NULL, '1', 'verb', '==', 'trade-walk', '0', '2021-08-23 00:00:00', NULL, '0');
+INSERT INTO `rules_conditions`
+            (`id`,
+             `rules_id`,
+             `attribute_name`,
+             `operator`,
+             `value`,
+             `is_custom_attriube`,
+             `created_at`,
+             `updated_at`,
+             `is_deleted`)
+VALUES      (NULL,
+             '1',
+             'verb',
+             '==',
+             'trade-walk',
+             '0',
+             '2021-08-23 00:00:00',
+             NULL,
+             '0'); 
 ```
 
 3. Create actions rules
 The actions used the rules id and the rules_workflow_actions_id for dispatch the rule
 ```sql
-INSERT INTO `rules_actions` (`id`, `rules_id`, `rules_workflow_actions_id`, `created_at`, `updated_at`, `is_deleted`) VALUES (NULL, '1', '1', '2021-05-14 17:40:43', NULL, '0');
+INSERT INTO `rules_actions`
+            (`id`,
+             `rules_id`,
+             `rules_workflow_actions_id`,
+             `created_at`,
+             `updated_at`,
+             `is_deleted`)
+VALUES      (NULL,
+             '1',
+             '1',
+             '2021-05-14 17:40:43',
+             NULL,
+             '0');
 ```
 
 

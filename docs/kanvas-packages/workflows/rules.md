@@ -14,19 +14,77 @@ We going to create a rule  for this example we have a create a rule for sent the
 1. In the table rules, you must insert the new rows. 
 
 ```sql
-INSERT INTO `rules` (`id`, `systems_modules_id`, `companies_id`, `rules_types_id`, `name`, `description`, `pattern`, `params`, `created_at`, `updated_at`, `is_deleted`) VALUES (NULL, '43', '108', '1', 'ADF Trade In', 'This is a Rule for ADF Trade In', '1', '{\"template\":\"adf-trade-in\", \"template_name\":\"adf-trade-pdf\"}', '2021-08-18 00:00:00', NULL, '0');
+INSERT INTO `rules`
+            (`id`,
+             `systems_modules_id`,
+             `companies_id`,
+             `rules_types_id`,
+             `name`,
+             `description`,
+             `pattern`,
+             `params`,
+             `created_at`,
+             `updated_at`,
+             `is_deleted`)
+VALUES      (NULL,
+             '43',
+             '108',
+             '1',
+             'ADF Trade In',
+             'This is a Rule for ADF Trade In',
+             '1',
+'{\"template\":\"adf-trade-in\", \"template_name\":\"adf-trade-pdf\"}',
+'2021-08-18 00:00:00',
+NULL,
+'0'); 
 ```
 
 2. In the rules_conditions table, you going to create a conditions for the rule, in this case the field verb must be trade-walk for execute the action
 
 ```sql
-INSERT INTO `rules_conditions` (`id`, `rules_id`, `attribute_name`, `operator`, `value`, `is_custom_attriube`, `created_at`, `updated_at`, `is_deleted`) VALUES (NULL, '1', 'verb', '==', 'trade-walk', '0', '2021-08-23 00:00:00', NULL, '0');
+INSERT INTO `rules_conditions`
+            (`id`,
+             `rules_id`,
+             `attribute_name`,
+             `operator`,
+             `value`,
+             `is_custom_attriube`,
+             `created_at`,
+             `updated_at`,
+             `is_deleted`)
+VALUES      (NULL,
+             '1',
+             'verb',
+             '==',
+             'trade-walk',
+             '0',
+             '2021-08-23 00:00:00',
+             NULL,
+             '0'); 
 ```
 
 3. In the rules_actions table
 Here you going to insert the actions that the rule will execute if is successful. This actions are the PDF and the ADF. <i>Note the rules_workflow_actions_id is a foreing key of rules_workflow_actions no the actions</i >
 ```sql
-INSERT INTO `rules_actions` (`id`, `rules_id`, `rules_workflow_actions_id`, `created_at`, `updated_at`, `is_deleted`) VALUES (NULL, '1', '2', '2021-05-14 17:40:43', NULL, '0'), (NULL, '1', '3', '2021-05-14 17:40:43', NULL, '0');
+INSERT INTO `rules_actions`
+            (`id`,
+             `rules_id`,
+             `rules_workflow_actions_id`,
+             `created_at`,
+             `updated_at`,
+             `is_deleted`)
+VALUES      (NULL,
+             '1',
+             '2',
+             '2021-05-14 17:40:43',
+             NULL,
+             '0'),
+            (NULL,
+             '1',
+             '3',
+             '2021-05-14 17:40:43',
+             NULL,
+             '0'); 
 ```
 
 
