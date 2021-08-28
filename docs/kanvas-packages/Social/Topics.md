@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 5
 ---
 
 # Topics
@@ -69,9 +69,9 @@ OR
 //find message
 $message = Messages::findFirst();
 
-//add a comment to the message 
-$messageComment = Topics::addToEntity($message, 'business  🏆');
-$messageComment = Topics::addMultiplesToEntity($message, ['business  🏆', 'Saving']);
+//add a topics to the message 
+$topics = Topics::addToEntity($message, 'business  🏆');
+$topics = Topics::addMultiplesToEntity($message, ['business  🏆', 'Saving']);
 ```
 
 Remove Topics from Entity
@@ -94,10 +94,10 @@ OR
 //find message
 $message = Messages::findFirst(3);
 
-//add a comment to the message 
-$messageComment = Topics::removeFromEntity($message, 'business  🏆');
-$messageComment = Topics::removeMultiplesFromEntity($message, ['business  🏆', 'Saving']);
-$messageComment = Topics::removeAll($message);
+//remove a topics to the message 
+$topics = Topics::removeFromEntity($message, 'business  🏆');
+$topics = Topics::removeMultiplesFromEntity($message, ['business  🏆', 'Saving']);
+$topics = Topics::removeAll($message);
 ```
 
 Sync Topics
@@ -126,4 +126,11 @@ List Entity by Topics
 ----------------
 
 List all entity of a specific type attached to this topic
+
+```php
+
+$topic = Topics::findFirstBySlug('business');
+
+$topic->listAllEntities(Messages::class, $limit, $page, $sort);
+```
 
