@@ -43,6 +43,7 @@ Add HasTopics Trait to your Entity
 class Messages implements BaseModel
 {
     use hasTopics;
+    //use canManageTopics;
 }
 
 ```

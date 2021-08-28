@@ -44,6 +44,7 @@ Add Hashtags Trait to your Entity
 class Messages implements BaseModel
 {
     use hasTags;
+    //use canManageTags;
 }
 
 ```

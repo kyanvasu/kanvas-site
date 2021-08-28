@@ -37,6 +37,7 @@ use Canvas\Models\Users as ModelsUsers;
 class Users implements FollowableInterface
 {
     use InteractionsTrait;
+    //use canManageInteractions;
 }
 
 ```
@@ -63,7 +64,6 @@ $book = Books::findFirst();
 //user will be able to like any phalcon model Entity
 $this->userData->likes($book);
 $this->userData->share($book);
-$this->userData->addToList($book);
 ```
 
 Has Interacted with a Entity

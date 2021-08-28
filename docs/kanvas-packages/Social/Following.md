@@ -25,6 +25,7 @@ use Canvas\Models\Users as ModelsUsers;
 class Users implements FollowableInterface
 {
     use FollowersTrait;
+    //use canManageFollowers;
 }
 
 ```
@@ -121,6 +122,21 @@ $this->userData->getTotalFollowing(Users::class);
 //for the current user get the total # of followers of type books
 $this->userData->getTotalFollowing(Books::class);
 
+```
+
+Following List
+-----
+
+Get the # of following for the specify entity class type
+
+```php
+
+//to get the total followers of any other entity
+$book = Books::findFirst();
+$list = Follow::getFollowers($book, $page, $limit, array $options);
+
+
+$list = $this->userData->getFollowers($page, $limit, array $options);
 ```
 
 Attach Events
