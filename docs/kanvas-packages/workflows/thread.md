@@ -1,8 +1,8 @@
 # Thread
 
-The threads or logs, are the output for each Actions, for example when the PDF action is execute the output is the filesystem entity as array.
+Threads is use to execute all actions within a rule , allowing use to pass data between each action.
 
-Actually the thread just can to use in the actions that use Templates, the var is logs and the method is getResults() as params, you must sent the string name of actions.
+So if we have a rule tat runs 2 actions PDF and SendEmail , withing the action handle function or on its Template parsing mechanism we will have the thread reference where we can get past results by calling thread.getResults(actionName)
 
 ## Example
 ```html

@@ -2,7 +2,9 @@
 
 ## Brief description
 
-As Kanvas grows it is necessary to add new features that support one or more types of applications. In the case of a CRM application, there is a fundamental feature that helps with the management of new or existing workable entities and guarantees specific actions upon them given certain conditions. This Workflow Rules, define specific workflow processes a workable entity must go through in order to meet certain requirements of the business model.
+As Kanvas grows it is necessary to add new features that support one or more types of applications. In the case of a CRM application, there is a fundamental feature that helps with the management of new or existing entities and guarantees specific actions given certain conditions. 
+
+This Workflow, define steps a workable entity must go through in order to meet certain requirements of the business model.
 
 
 # Glosary

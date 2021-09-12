@@ -1,17 +1,20 @@
 # The Rule
 
-The rules are the main feature in this. The rule is compose for the Rule, the actions trigered and the conditions. Each Actions have the specifics System modules,
-For Example, PDF currently just work with the Messages system modules, no leads.
+Rules is the central point of the system, is where we define the type of rule we will execute for what system module type on this app.
+
+For example:
+
+For any Company module on your app we will execute actions after creation or updating the record
 
 ## Before 
-Currently the Workflow no have the interface for create rule, here we going to create the rule in the database. You must have the system_modules_id of the entity 
-will to execute the rule, the companies_id.
+A the moment we still don't have a proper UI to manage the rules, so we will provide the SQL needed to manually setup the package
 
 
 # Creating a new rule
 
-We going to create a rule  for this example we have a create a rule for sent the ADF and create the PDF. This rules will be trigered when a 
-1. In the table rules, you must insert the new rows. 
+First we need to insert the rules row specifying the system module for reach the rule as to run , companies_id will define if this rules runs for just a specific company or if we specify 0, will run for all companies in the app.
+
+Params is a important field, this is a json structure that will be pass to the actions
 
 ```sql
 INSERT INTO `rules`
@@ -39,7 +42,9 @@ NULL,
 '0'); 
 ```
 
-2. In the rules_conditions table, you going to create a conditions for the rule, in this case the field verb must be trade-walk for execute the action
+1. Set the logical condition needed for the rule to be executed, in this case the field verb must be trade-walk for execute the action
+
+We use [Symfony ExpressionLanguage](https://symfony.com/doc/current/components/expression_language.html) , to handle the login of each rule condition
 
 ```sql
 INSERT INTO `rules_conditions`
@@ -63,8 +68,7 @@ VALUES      (NULL,
              '0'); 
 ```
 
-3. In the rules_actions table
-Here you going to insert the actions that the rule will execute if is successful. This actions are the PDF and the ADF. <i>Note the rules_workflow_actions_id is a foreing key of rules_workflow_actions no the actions</i >
+1. Set the actions to execute if the rule is successful,
 ```sql
 INSERT INTO `rules_actions`
             (`id`,
@@ -86,39 +90,3 @@ VALUES      (NULL,
              NULL,
              '0'); 
 ```
-
-
-- The ADF in the internal handle method use the package [Hengen](https://github.com/bakaphp/hengen), this package receive the Leads model as first argument and n models as seconds. Hengen use volt engine for create the XMl, 
-this XML is a email_template. So, each model that you send to rule will be parse to array and set to data with your slug system module.
-
-For example you sent the lead and the message model, in the xml you have the data array with two keys leads and messages
-
-So your template can be 
-```html
-{% set message_decode = data['messages']['message']|json_decode %}
-
-<?xml version='1'>
-<customer>
-    <name>{{ data['lead']['firstname'] }}<name>
-</customer>
-<vehicle>
-    <vin>{{ message_decode.data.form.vin }}</vin>
-</vehicle>
-```
-The ADF take the email template value for the params rules, the template value in the step 1 in this page
-
-- The PDF just receive the message like a model, so into the pdf you must manipulate this as you want
-
-```html
-
-{% set form = entity.messages()['data']['form'] %}
-{% set lead = entity.entity() %}
-{% set companies = entity.companies %}
-
-<div>
-    <p> My companies name is{{companies.name}}</p>
-    </p> My name is {{lead.people.name}}
-    <p> My vehicle is {{ form['make'] }}</p>
-</div>
-```
-
