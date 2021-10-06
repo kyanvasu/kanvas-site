@@ -1,7 +1,6 @@
 # The Rule
 
-Rules is the central point of the system, is where we define the type of rule we will execute for what system module type on this app.
-
+Rules are the conditional that need to be satisfied in order for a workflow to be executed
 For example:
 
 For any Company module on your app we will execute actions after creation or updating the record
