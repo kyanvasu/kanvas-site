@@ -21,6 +21,7 @@ Our comment system has the following feature
 - Add reaction to any comment (emojis)
 - Mentions
 - Notifications
+- Commentable Controller Trait
 
 Add Comment to Entity
 -------------------
@@ -186,3 +187,48 @@ $message = Messages::findFirst(3);
 //add a comment to the message 
 $messageComment = Comments::getById($message, $id)->reply($user, 'text');
 ```
+
+# Controller
+
+Once you have a commentable entity you will need to expose it via a controller, allowing the application to create comments or replies for that given entity.
+
+The first thing you will need to do is 
+
+```php
+<?php
+
+class RoomComments
+{
+    use CommentableController; //or CommentableRoute?
+
+    protected ModelInterface $commentParentEntity;
+    protected $parentId;
+
+    /**
+     * Set the entity the comment will belong to
+     **/
+    public function setCommentEntity()
+    {
+        $this->parentId = (int) $this->router->getParams()['messageId'];
+        $this->commentParentEntity = Rooms::findFirst($this->parentId);
+
+        if (!$this->parentId) {
+            throw new RuntimeException('Not Found');
+        }
+}
+
+```
+
+By adding the CommentableController you will have the following Routes:
+
+List all comments for he given entity <br />
+`- GET  /entity/{id}/comments `
+
+Add a comment to the entity <br />
+`- POST /entity/{id}/comments`
+
+Add a reply to a comment <br />
+`- POST /entity/{id}/comments/{id}`
+
+Get a specify Comment <br />
+`- GET /entity/{id}/comments/{id}`
