@@ -52,6 +52,15 @@ setx AWS_PROFILE user1
 
 ## Setup of the environment
 
+### Creating the S3 bucket for the environment
+
+An [S3 bucket](https://aws.amazon.com/s3/) should be created to store all you API environment variables in a file(the file should not have any extension). This file is later used by the Environment Builder at docker image creation. The bucket and the file storing the environment variables may have any name you like. Here is a basic example:
+
+* **S3 Bucket Name**: sacrmapi
+* **S3 Environment Variables Name**: developmentenv
+
+***Note***: You could also add the environment variables file to a folder for a more organize bucket but later on in the `locals.tf` in the field `aws_env_s3_bucket_prefix_key` you have to specify the path to the file inside the folder.
+
 ### Changing the ```locals.tf``` file
 
 The ```locals.tf``` file contains all the values for the environment builder with terraform. Change them as you like for your environment. Furthermore, is a brief description of every field:
