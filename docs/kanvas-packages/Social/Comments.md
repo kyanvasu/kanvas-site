@@ -219,16 +219,28 @@ class RoomComments
 
 ```
 
-By adding the CommentableController you will have the following Routes:
+By adding the CommentableController you will have the following functions to use in your routes:
 
 List all comments for he given entity <br />
+`- getAll() `
+
+Example: <br />
 `- GET  /entity/{id}/comments `
 
 Add a comment to the entity <br />
+`- create()`
+
+Example: <br />
 `- POST /entity/{id}/comments`
 
 Add a reply to a comment <br />
+`- addReply(int $commentId)`
+
+Example: <br />
 `- POST /entity/{id}/comments/{id}`
 
 Get a specify Comment <br />
+`- getById(int $id)`
+
+Example: <br />
 `- GET /entity/{id}/comments/{id}`

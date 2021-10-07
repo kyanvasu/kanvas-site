@@ -165,10 +165,16 @@ class RoomsTopics
 
 ```
 
-By adding the TopicableController you will have the following Routes:
+By adding the TopicableController you will have the following function to use for your routes:
 
 List all topics for the given entity type <br />
-`- GET  /entity/0/topics `
+`- getAll` 
+
+Example: <br />
+`- GET  /entity/0/topics` 
 
 Get all entities attach to the current topic id<br />
+`- getAllByEntityId(int|string $id)`
+
+Example: <br />
 `- GET /entity/0/topics/{id}`
