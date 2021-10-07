@@ -135,3 +135,40 @@ $topic = Topics::findFirstBySlug('business');
 $topic->listAllEntities(Messages::class, $limit, $page, $sort);
 ```
 
+# Controller
+
+Once you have entities with hasTopic trait you will need to expose route allowing users to filer content by them.
+
+
+```php
+<?php
+
+class RoomsTopics
+{
+    use TopicableController; //or TopicableRoutes?
+
+    protected ModelInterface $topicsBelongingEntity;
+    protected int|string $parentId;
+
+    /**
+     * Set the entity the comment will belong to
+     **/
+    public function setTopicsEntity()
+    {
+        $this->parentId = (int) $this->router->getParams()['roomsId'];
+        $this->topicsBelongingEntity = Rooms::findFirst($this->parentId);
+
+        if (!$this->parentId) {
+            throw new RuntimeException('Not Found');
+        }
+}
+
+```
+
+By adding the TopicableController you will have the following Routes:
+
+List all topics for the given entity type <br />
+`- GET  /entity/0/topics `
+
+Get all entities attach to the current topic id<br />
+`- GET /entity/0/topics/{id}`

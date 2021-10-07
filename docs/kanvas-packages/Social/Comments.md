@@ -202,7 +202,7 @@ class RoomComments
     use CommentableController; //or CommentableRoute?
 
     protected ModelInterface $commentParentEntity;
-    protected $parentId;
+    protected int|string $parentId;
 
     /**
      * Set the entity the comment will belong to
