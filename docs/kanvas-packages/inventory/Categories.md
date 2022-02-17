@@ -55,7 +55,7 @@ $category = Category::getBySlug($slug, $company);
 Update Category
 
 ```php
-//find message
+//update category
 $category = Category::getById(4, $company);
 $category->name = 'name';
 $category->slug = 'slug';
@@ -75,7 +75,33 @@ $category->unPublish();
 Get all categories
 
 ```php
-//find message
+//get all categories
 $category = Category::getAll($company, $page, $limit);
+
+```
+
+Add Products to Category
+
+```php
+//add product in category
+$category = Category::getById(4);
+$category->addProduct($product);
+
+//result set of products
+$category->addProducts($products);
+
+// remove product from category
+
+$category->removeProduct($product);
+$category->removeProducts($products);
+
+```
+
+Get all products in category
+
+```php
+//find message
+$category = Category::getById(4);
+$category->getProducts($page, $limit);
 
 ```
