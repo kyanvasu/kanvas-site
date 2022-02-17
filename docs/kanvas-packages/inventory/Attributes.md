@@ -47,8 +47,8 @@ Update Attribute
 ```php
 //update category
 $attribute = Attribute::getById(4, $company);
-$category->name = 'name';
-$category->saveOrFail();
+$attribute->name = 'name';
+$attribute->saveOrFail();
 
 ```
 
