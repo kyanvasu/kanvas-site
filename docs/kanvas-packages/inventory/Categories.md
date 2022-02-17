@@ -6,9 +6,6 @@ sidebar_position: 2
 
 Product Categories are typically created by the owner of the store to group product together.
 
-<br />
-<br />
-
 # Methods
 
 ```php
