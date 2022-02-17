@@ -43,6 +43,7 @@ Find a category
 
 //find category by id
 $category = Category::getById(3);
+$category = Category::getByUuid('000-000-0000-000');
 
 //or
 $category = Category::getById(4, $company);
