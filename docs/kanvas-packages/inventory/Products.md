@@ -94,12 +94,11 @@ $product = Product::getById(4, $company);
 $product->addCategory($category);
 $product->addCategories([$category, $category]);
 $product->removeCategory($category);
-$product->replaceCategory($category, $newCategory);
+$product->moveCategory($category, $newCategory);
 
 //get product categories
-
 $product->getCategories();
-$product->getCategory($category);
+$product->getParentCategory();
 
 ```
 
@@ -109,6 +108,8 @@ Product Attributes
 //add product in category
 $product = Product::getById(4);
 $product->addAttribute($attribute, $value);
+$product->updateAttribute($attribute, $value);
+
 $product->addAttributes([
     [$attribute, $value],
     [$attribute2, $value2]
