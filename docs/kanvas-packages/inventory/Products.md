@@ -61,6 +61,16 @@ $product = Product::getById(4, $company);
 
 ```
 
+List
+
+```php
+
+//find category by id
+$products = Products::getAll($company, $page, $limit);
+
+
+```
+
 Update Product
 
 ```php
@@ -190,6 +200,18 @@ $variant->changePosition(1);
 $variant = Variant::getById(4, $company);
 $variant = Variant::getBySku('sku', $company);
 $variant = Variant::getByUuid('sku', $company);
+
+```
+
+Find All Variant for product
+
+```php
+//Product Category
+$product = Product::getById(4, $company);
+
+
+$variant = $product->getAllVariants($page, $limit);
+$variant = Variant::getAll($company, $page, $limit);
 
 ```
 
