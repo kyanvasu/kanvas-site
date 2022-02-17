@@ -108,3 +108,151 @@ $product->addAttributes([
 $product->removeAttribute($attribute);
 ```
 
+Warehouse
+
+```php
+//update category
+$product = Product::getById(4, $company);
+
+$product->addWarehouse($warehouse);
+$product->addWarehouses($warehouses);
+```
+
+# Variants
+
+Products with variants are products that have similarities, they are based on the same model, but differ in some aspects from one another.
+
+They offer customers various purchase options for a product such as different colors, sizes, dimensions, flavors, etc.
+
+There are more and more products with variants in all businesses, here are some examples:
+
+- T-shirts available in different colors and sizes
+- Sofas varying in colors and number of seats
+- Mattresses with different dimensions (for one person or 2 people)
+- Smartphones varying in color and screen size
+- Screwdrivers available in different dimensions
+- Teas by packaging
+- Fruit compotes with different flavors
+
+
+# Methods
+
+Add Variants to Product
+
+```php
+//Product Category
+$product = Product::getById(4, $company);
+
+
+$product->addVariant([
+    'name' => 'name',
+    'description' => 'description',
+    'short_description' => 'short description',
+    'position' => 1,
+    'sku' => 'sku', //required and unique
+    'ean' => 'ean',
+    'barcode' => 'barcode',
+    'serial_number' => 'serial_number',
+    'is_published' => true
+]);
+
+Variant::create(
+    $product,
+    [
+        'name' => 'name',
+        'description' => 'description',
+        'short_description' => 'short description',
+        'position' => 1,
+        'sku' => 'sku', //required and unique
+        'ean' => 'ean',
+        'barcode' => 'barcode',
+        'serial_number' => 'serial_number',
+        'is_published' => true
+    ]
+);
+
+```
+
+Find Variant for product
+
+```php
+//Product Category
+$product = Product::getById(4, $company);
+
+
+$variant = $product->getVariantBySku('sku');
+$variant = $product->getVariantByUuid('uuid');
+$variant = $product->getById(4);
+
+$variant->publish(); //
+$variant->changePosition(1);
+
+$variant = Variant::getById(4, $company);
+$variant = Variant::getBySku('sku', $company);
+$variant = Variant::getByUuid('sku', $company);
+
+```
+
+Update Variant
+
+```php
+//Product Category
+$product = Product::getById(4, $company);
+
+
+$variant = $product->getVariantBySku('sku');
+
+$variant->name = 'name';
+$variant->description = 'description';
+$variant->saveOrFail();
+
+```
+
+Update Variant Warehouse
+
+```php
+//Product Category
+$product = Product::getById(4, $company);
+
+
+$variant = $product->getVariantBySku('sku');
+
+$variant->addWarehouse(
+    $warehouse,
+    [
+    'quantity' => 1,
+    'price' => 2,
+    'sku' => 3,
+    'position' => 4
+    ]
+);
+
+$variant->moveWarehouses($warehouse, $newWarehouse);
+$variant->removeWarehouse($warehouse);
+
+$variant->getWarehouses();
+$variantWarehouse = $variant->getWarehouse($warehouse);
+$variantWarehouse->price = 3;
+$variantWarehouse->update();
+
+$variantWarehouse->getPriceHistory();
+``` 
+
+Variants Attributes
+
+```php
+//add product in category
+$product = Product::getById(4, $company);
+
+
+$variant = $product->getVariantBySku('sku');
+
+$variant->addAttribute($attribute, $value);
+$variant->addAttributes([
+    [$attribute, $value],
+    [$attribute2, $value2]
+]);
+
+//result set of products
+$variant->removeAttribute($attribute);
+```
