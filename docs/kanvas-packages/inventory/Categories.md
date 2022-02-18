@@ -28,7 +28,8 @@ Add a child category
 ```php
 
 //create a new category
-$category = Category::getById($company, $id);
+$user->setCompany($company);
+$category = Category::getById($id, $user);
 $category->addChild($child);
 
 //or 
@@ -46,10 +47,10 @@ $category = Category::getById(3);
 $category = Category::getByUuid('000-000-0000-000');
 
 //or
-$category = Category::getById(4, $company);
+$category = Category::getById(4, $user);
 
 //or
-$category = Category::getBySlug($slug, $company);
+$category = Category::getBySlug($slug, $user);
 
 ```
 
@@ -57,7 +58,7 @@ Update Category
 
 ```php
 //update category
-$category = Category::getById(4, $company);
+$category = Category::getById(4, $user);
 $category->name = 'name';
 $category->slug = 'slug';
 $category->saveOrFail();
@@ -77,7 +78,7 @@ Get all categories
 
 ```php
 //get all categories
-$category = Category::getAll($company, $page, $limit);
+$category = Category::getAll($user, $page, $limit);
 
 ```
 

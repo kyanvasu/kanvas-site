@@ -22,8 +22,9 @@ A product is the item offered for sale. A product can be a service or an item. I
 ```php
 
 //create a new product
+$user->setCompany($user);
 $product = Product::create(
-    $company, 
+    $user, 
     $name,
     $category,
     $description,
@@ -34,7 +35,7 @@ $product = Product::create(
 
 $products = Products::createMultiple([
     [
-        $company, 
+        $user, 
         $name,
         $category,
         $description,
@@ -56,7 +57,8 @@ $product = Product::getByUuid('000-000-0000-000');
 $product = Product::getBySlug('slug');
 
 //or
-$product = Product::getById(4, $company);
+$user->setCompany($company);
+$product = Product::getById(4, $user);
 
 
 ```
@@ -66,7 +68,7 @@ List
 ```php
 
 //find category by id
-$products = Products::getAll($company, $page, $limit);
+$products = Products::getAll($user, $page, $limit);
 
 
 ```
@@ -75,7 +77,7 @@ Update Product
 
 ```php
 //update category
-$product = Product::getById(4, $company);
+$product = Product::getById(4, $user);
 $product->name = 'name';
 $product->saveOrFail();
 
@@ -90,7 +92,7 @@ Product change category
 
 ```php
 //Product Category
-$product = Product::getById(4, $company);
+$product = Product::getById(4, $user);
 $product->addCategory($category);
 $product->addCategories([$category, $category]);
 $product->removeCategory($category);
@@ -123,7 +125,7 @@ Warehouse
 
 ```php
 //update category
-$product = Product::getById(4, $company);
+$product = Product::getById(4, $user);
 
 $product->addWarehouse($warehouse);
 $product->addWarehouses($warehouses);
@@ -152,7 +154,7 @@ Add Variants to Product
 
 ```php
 //Product Category
-$product = Product::getById(4, $company);
+$product = Product::getById(4, $user);
 
 
 $product->addVariant([
@@ -188,7 +190,7 @@ Find Variant for product
 
 ```php
 //Product Category
-$product = Product::getById(4, $company);
+$product = Product::getById(4, $user);
 
 
 $variant = $product->getVariantBySku('sku');
@@ -198,9 +200,9 @@ $variant = $product->getById(4);
 $variant->publish(); //
 $variant->changePosition(1);
 
-$variant = Variant::getById(4, $company);
-$variant = Variant::getBySku('sku', $company);
-$variant = Variant::getByUuid('sku', $company);
+$variant = Variant::getById(4, $user);
+$variant = Variant::getBySku('sku', $user);
+$variant = Variant::getByUuid('sku', $user);
 
 ```
 
@@ -208,11 +210,11 @@ Find All Variant for product
 
 ```php
 //Product Category
-$product = Product::getById(4, $company);
+$product = Product::getById(4, $user);
 
 
 $variant = $product->getAllVariants($page, $limit);
-$variant = Variant::getAll($company, $page, $limit);
+$variant = Variant::getAll($user, $page, $limit);
 
 ```
 
@@ -220,7 +222,7 @@ Update Variant
 
 ```php
 //Product Category
-$product = Product::getById(4, $company);
+$product = Product::getById(4, $user);
 
 
 $variant = $product->getVariantBySku('sku');
@@ -235,7 +237,7 @@ Update Variant Warehouse
 
 ```php
 //Product Category
-$product = Product::getById(4, $company);
+$product = Product::getById(4, $user);
 
 
 $variant = $product->getVariantBySku('sku');
@@ -265,7 +267,7 @@ Variants Attributes
 
 ```php
 //add product in category
-$product = Product::getById(4, $company);
+$product = Product::getById(4, $user);
 
 
 $variant = $product->getVariantBySku('sku');

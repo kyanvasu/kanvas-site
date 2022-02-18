@@ -13,13 +13,13 @@ Regions are location company can configure to setup the warehouse location. Regi
 
 //create a new product
 $product = Regions::create(
-    $company, 
+    $user, 
     $name,
     $currency,
     $idDefault
 );
 
-$region = Regions::getById($id, $company);
+$region = Regions::getById($id, $user);
 $region = Regions::getByUuid($uuid);
 
 ```

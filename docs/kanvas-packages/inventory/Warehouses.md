@@ -14,14 +14,14 @@ In our system each warehouse belongs to a region , allowing use to provide multi
 
 //create a new product
 $product = Warehouse::create(
-    $company, 
+    $user, 
     $region,
     $name,
     $isDefault,
     $isPublished
 );
 
-$warehouse = Warehouse::getById($id, $company);
+$warehouse = Warehouse::getById($id, $user);
 $warehouse = Warehouse::getByUuid($uuid);
 
 

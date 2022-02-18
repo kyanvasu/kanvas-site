@@ -37,7 +37,8 @@ $attribute = Attribute::getById(3);
 $attribute = Attribute::getByUuid('000-000-0000-000');
 
 //or
-$attribute = Attribute::getById(4, $company);
+$user->setCompany($company);
+$attribute = Attribute::getById(4, $user);
 
 
 ```
@@ -46,7 +47,7 @@ Update Attribute
 
 ```php
 //update category
-$attribute = Attribute::getById(4, $company);
+$attribute = Attribute::getById(4, $user);
 $attribute->name = 'name';
 $attribute->saveOrFail();
 
@@ -56,7 +57,7 @@ Get all Attribute
 
 ```php
 //get all categories
-$attribute = Attribute::getAll($company, $page, $limit);
+$attribute = Attribute::getAll($user, $page, $limit);
 
 ```
 
