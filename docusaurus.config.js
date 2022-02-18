@@ -11,6 +11,9 @@ module.exports = {
   projectName: 'kanvas-documentation',
   plugins: ['docusaurus-plugin-sass'],
   themeConfig: {
+     prism: {
+      additionalLanguages: ['php'],
+    },
     colorMode: {
       disableSwitch: true
     },
