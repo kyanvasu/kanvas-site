@@ -14,3 +14,12 @@ What do we consider a inventory layer?
 - Regions
 - Warehouses
 - Search
+
+
+# Notes
+
+If we want to overwrite the current user logged in Company , we can use the following code
+
+```php
+$user->setCompany($company);
+```

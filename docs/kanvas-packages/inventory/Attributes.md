@@ -22,7 +22,7 @@ Attributes vary but can apply to multiple products and product categories. Here 
 
 //create a new attribute
 $attribute = Attribute::create(
-    $company, 
+    $user, 
     $name,
 );
 
@@ -37,7 +37,6 @@ $attribute = Attribute::getById(3);
 $attribute = Attribute::getByUuid('000-000-0000-000');
 
 //or
-$user->setCompany($company);
 $attribute = Attribute::getById(4, $user);
 
 

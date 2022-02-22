@@ -21,16 +21,25 @@ A product is the item offered for sale. A product can be a service or an item. I
 
 ```php
 
-//create a new product
-$user->setCompany($user);
+/**
+ * create a new product
+ * 
+ * @param User $user
+ * @param string $name
+ * @param Category $category
+ * @param string $description
+ * @param string @shortDescription
+ */
 $product = Product::create(
     $user, 
     $name,
     $category,
-    $description,
-    $shortDescription,
-    $warrantyTerms,
-    $isPublished
+    [
+        'description' => $description,
+        'shortDescription' => $shortDescription
+    ],
+    $isPublished,
+    $warrantyTerms
 );
 
 $products = Products::createMultiple([
@@ -40,8 +49,8 @@ $products = Products::createMultiple([
         $category,
         $description,
         $shortDescription,
-        $warrantyTerms,
-        $isPublished
+        $isPublished,
+        $warrantyTerms
     ]
 ]);
 
@@ -57,7 +66,6 @@ $product = Product::getByUuid('000-000-0000-000');
 $product = Product::getBySlug('slug');
 
 //or
-$user->setCompany($company);
 $product = Product::getById(4, $user);
 
 
