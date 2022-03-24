@@ -17,6 +17,9 @@ module.exports = {
     colorMode: {
       disableSwitch: true
     },
+    prism: {
+      additionalLanguages: ['php'],
+    },
     navbar: {
       logo: {
         alt: 'Kanvas',
